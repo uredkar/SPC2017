@@ -5,6 +5,6 @@ import {Menu} from './menu';
 
 describe('Menu', () => {
   it('should create an instance', () => {
-    expect(new Menu()).toBeTruthy();
+      expect(new Menu(["pancakes", "waffles", "orange juice"], 1)).toBeTruthy();
   });
 });

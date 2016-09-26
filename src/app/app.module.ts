@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { Routes, RouterModule } from '@angular/router';
+
+import { routes } from './app.routes';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -31,7 +35,9 @@ import { MenuComponent } from './menu/menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
 @NgModule({
-  declarations: [
+    declarations: [
+
+    
     AppComponent,
     LoginComponent,
     AdminComponent,
@@ -62,7 +68,8 @@ import { PagecomponentComponent } from './pagecomponent/pagecomponent.component'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+      HttpModule,
+      RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
