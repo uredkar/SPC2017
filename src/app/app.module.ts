@@ -10,6 +10,9 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+
+import { TopNavComponent } from './shared/topnav/topnav';
+
 import { PlanningComponent } from './planning/planning.component';
 import { ReceivingComponent } from './receiving/receiving.component';
 import { ShipingComponent } from './shiping/shiping.component';
@@ -32,6 +35,7 @@ import { ProductComponent } from './product/product.component';
 import { QcteamComponent } from './qcteam/qcteam.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { MenuComponent } from './menu/menu.component';
+import { SideBarMenuComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
 @NgModule({
@@ -40,6 +44,7 @@ import { PagecomponentComponent } from './pagecomponent/pagecomponent.component'
     
     AppComponent,
     LoginComponent,
+    TopNavComponent,
     AdminComponent,
     PlanningComponent,
     ReceivingComponent,
@@ -62,7 +67,8 @@ import { PagecomponentComponent } from './pagecomponent/pagecomponent.component'
     ProductComponent,
     QcteamComponent,
     MainpageComponent,
-    MenuComponent,
+        MenuComponent,
+        SideBarMenuComponent,
     PagecomponentComponent
   ],
   imports: [

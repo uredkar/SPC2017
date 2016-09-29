@@ -2,4 +2,11 @@
 <h1>
   {{title}}
 </h1>
-<router-outlet></router-outlet>
+
+<top-nav></top-nav>
+<sidebar-menu></sidebar-menu>
+<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
+    <router-outlet></router-outlet>
+</section>
+
+
