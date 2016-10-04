@@ -1,17 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 
-import { routes } from './app.routes';
+
+
+import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { TopNavComponent } from './shared/topnav/topnav';
+
+
 
 import { PlanningComponent } from './planning/planning.component';
 import { ReceivingComponent } from './receiving/receiving.component';
@@ -38,11 +43,15 @@ import { MenuComponent } from './menu/menu.component';
 import { SideBarMenuComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
+import { HomeModule } from './home/home.module';
+
+
 @NgModule({
     declarations: [
-
+        
     
-    AppComponent,
+        AppComponent,
+        
     LoginComponent,
     TopNavComponent,
     AdminComponent,
@@ -67,17 +76,18 @@ import { PagecomponentComponent } from './pagecomponent/pagecomponent.component'
     ProductComponent,
     QcteamComponent,
     MainpageComponent,
-        MenuComponent,
-        SideBarMenuComponent,
+    MenuComponent,
+    SideBarMenuComponent,
     PagecomponentComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-      HttpModule,
-      RouterModule.forRoot(routes)
+    imports: [
+        HomeModule,
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        routing,
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
