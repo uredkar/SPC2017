@@ -34,7 +34,7 @@ export class NotificationComponent { }
 
 export class HomeComponent {
 	/* Carousel Variable */
-	myInterval: number = 5000;
+	//myInterval: number = 5000;
 	index: number = 0;
 	slides: Array<any> = [];
 	imgUrl: Array<any> = [

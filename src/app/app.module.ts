@@ -4,19 +4,25 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
+/// application 
 import { Routes, RouterModule } from '@angular/router';
-
-
-
 import { routing } from './app.routes';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './admin/admin.component';
 
+import { AppComponent } from './app.component';
+import { MenuService } from './menu/menu.service';
 import { TopNavComponent } from './shared/topnav/topnav';
 
 
+
+
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+
+
+import {  DropdownModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+// application components
 
 import { PlanningComponent } from './planning/planning.component';
 import { ReceivingComponent } from './receiving/receiving.component';
@@ -43,15 +49,16 @@ import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
+
+// custom modules
 import { HomeModule } from './home/home.module';
 
 
 @NgModule({
     declarations: [
-        
+     
     
-        AppComponent,
-        
+    AppComponent,
     LoginComponent,
     TopNavComponent,
     AdminComponent,
@@ -78,16 +85,20 @@ import { HomeModule } from './home/home.module';
     MainpageComponent,
     MenuComponent,
     SidebarComponent,
-    PagecomponentComponent
+    PagecomponentComponent,
+
+    
+    
   ],
     imports: [
         HomeModule,
         BrowserModule,
         FormsModule,
         HttpModule,
+        DropdownModule, AlertModule,
         routing,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
