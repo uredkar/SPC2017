@@ -13,8 +13,16 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
+                
+                <li role="menuitem" *ngFor="let menuitem of menu">
+                    <a href="#{{menuitem.id}}">
+                        <span class="badge">{{menuitem.id}}.{{menuitem.name}}</span>
+                    </a>
+                </li>
+                
+
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+
 
                 
                 <li class="btn-group" dropdown [(isOpen)]="status.isopen">
