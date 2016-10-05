@@ -40,7 +40,7 @@ import { ProductComponent } from './product/product.component';
 import { QcteamComponent } from './qcteam/qcteam.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { MenuComponent } from './menu/menu.component';
-import { SideBarMenuComponent } from './menu/sidebar.menu.component';
+import { SidebarComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
 import { HomeModule } from './home/home.module';
@@ -77,7 +77,7 @@ import { HomeModule } from './home/home.module';
     QcteamComponent,
     MainpageComponent,
     MenuComponent,
-    SideBarMenuComponent,
+    SidebarComponent,
     PagecomponentComponent
   ],
     imports: [

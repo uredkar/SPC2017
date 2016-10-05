@@ -1,6 +1,6 @@
 ﻿import { Route } from '@angular/router';
 import { MenuComponent } from './menu.component';
-import { SideBarMenuComponent } from './sidebar.menu.component';
+import { SidebarComponent } from './sidebar.menu.component';
 
 //export const MenuRoutes: Route[] = [
 //    {

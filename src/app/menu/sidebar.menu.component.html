@@ -3,10 +3,10 @@
 </button>
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
-        <a routerLink="/sidemenu1/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i>Home
+        <a routerLink="sidemenu/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Dashboard
         </a>
-        <a [routerLink]="['/sidemenu2/home']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['chart']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i> Charts
         </a>
         <a [routerLink]="['tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">

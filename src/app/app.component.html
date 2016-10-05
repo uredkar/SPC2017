@@ -1,17 +1,8 @@
-
-
-<div></div>
 <h1>
   {{title}}
 </h1>
-
-<!--<app-menu></app-menu>-->
-<!--<sidebar-menu></sidebar-menu>-->
-
-<div class="col-sm-12">
-<router-outlet></router-outlet>
-</div>
-<!--<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
-   
-</section>-->
-
+<app-menu></app-menu>
+<sidebar-menu></sidebar-menu>
+<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
+    <router-outlet></router-outlet>
+</section>

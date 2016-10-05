@@ -10,13 +10,13 @@ import { HomeRoutes } from './home/index';
 
 
 import { MenuComponent } from './menu/menu.component';
-import { SideBarMenuComponent } from './menu/sidebar.menu.component';
+import { SidebarComponent } from './menu/sidebar.menu.component';
 import { TopNavComponent } from './shared/topnav/topnav';
 
 
 export const routes: Routes = [
     
-    { path: '',  component: SideBarMenuComponent },
+    { path: '', component: SidebarComponent },
     { path: '', component: MenuComponent },
     ...HomeRoutes
     

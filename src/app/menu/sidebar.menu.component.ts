@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
 
+import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'sidebar-menu',
     templateUrl: './sidebar.menu.component.html',
-    styleUrls: ['./menu.component.css']
 })
-export class SideBarMenuComponent implements OnInit {
 
-    constructor()
-    {
-        
+export class SidebarComponent {
+    isActive = false;
+    showMenu: string = '';
+    eventCalled() {
+        this.isActive = !this.isActive;
     }
-
-    ngOnInit() {
+    addExpandClass(element: any) {
+        if (element === this.showMenu) {
+            this.showMenu = '0';
+        } else {
+            this.showMenu = element;
+        }
     }
-
-};
+}
