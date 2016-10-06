@@ -5,8 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
-import { homeRoutes } from './home/index';
+//import { homeRoutes } from './home/index';
 import { HomeRoutes } from './home/index';
+import { MenuRoutes } from './menu/menu.routes';
 
 
 import { MenuComponent } from './menu/menu.component';
@@ -18,7 +19,8 @@ export const routes: Routes = [
     
     { path: '', component: SidebarComponent },
     { path: '', component: MenuComponent },
-    ...HomeRoutes
+    ...HomeRoutes,
+    ...MenuRoutes
     
 
 

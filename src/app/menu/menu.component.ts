@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { MenuItem, MenuService } from './menu.service';
+import { MenuService } from './menu.service';
+import { MenuItem } from './menu.item';
+
+
 import { Subscription } from 'rxjs/Subscription';
 
 

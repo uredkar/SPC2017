@@ -1,22 +1,12 @@
-﻿import { Route } from '@angular/router';
-import { MenuComponent } from './menu.component';
-import { SidebarComponent } from './sidebar.menu.component';
+﻿import { Routes, RouterModule } from '@angular/router';
 
-//export const MenuRoutes: Route[] = [
-//    {
-//        path: '',
-//        component: MenuComponent
-//    },
-//    {
-//        path: '',
-//        component: SideBarMenuComponent
-//    },
-//    {
-//        path: 'mainmenu',
-//        component: MenuComponent
-//    },
-//    {
-//        path: 'sidebar',
-//        component: SideBarMenuComponent
-//    }
-//];
+import { HomeComponent } from '../home/home.component';
+import { ChatComponent } from '../home/home.component';
+
+export const MenuRoutes: Routes = [
+    { path: 'sidemenu1/home', component: HomeComponent },
+    { path: 'chart', component: ChatComponent }
+];
+
+
+export const menuRoutes = RouterModule.forChild(MenuRoutes);
