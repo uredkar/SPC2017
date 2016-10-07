@@ -53,6 +53,8 @@ import { PagecomponentComponent } from './pagecomponent/pagecomponent.component'
 // custom modules
 import { HomeModule } from './home/home.module';
 
+import { QcChartModule } from './chart/chart.module';
+
 
 @NgModule({
     declarations: [
@@ -95,6 +97,7 @@ import { HomeModule } from './home/home.module';
         BrowserModule,
         FormsModule,
         HttpModule,
+        QcChartModule,
         DropdownModule, AlertModule,
         routing,
   ],
