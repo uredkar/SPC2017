@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/d3/d3.d.ts" />
-import { Component, Renderer, ViewChild, AfterViewInit, OnChanges, ElementRef, OnInit } from '@angular/core';
+import { Component, Renderer, ViewChild, ViewChildren, AfterViewInit, OnChanges, ElementRef, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 
 
@@ -37,9 +37,11 @@ export class BubblesChart {
     }
 }
 
+let template = require('./d3js.component.html');
+
 @Component({
     selector: 'bubbles',
-    template: '<svg #target width="900" height="300"></svg>'
+    template: template
 
     
 })
@@ -47,6 +49,7 @@ export class D3Component implements OnChanges, AfterViewInit {
     // Declares values as a data-bound property
     @Input() values: number[];
     // Gets a reference to the child DOM node
+    //@ViewChildren('target') target;
     @ViewChild('target') target;
     // An instance of the BubblesChart
     chart: BubblesChart;
@@ -64,6 +67,7 @@ export class D3Component implements OnChanges, AfterViewInit {
     // Lifecycle hook for when the component's view has been fully initialized
     ngAfterViewInit() {
         // We have to wait until the view has been initialized before we can get the
+        console.log("After view init");
         //DOM element to bind the chart to it
         this.chart = new BubblesChart(this.target.nativeElement);
         this.values = [1000, 25000, 3000000, 120000, 25, 10203];
