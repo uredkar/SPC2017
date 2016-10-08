@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { MenuService } from './menu/menu.service';
 import { TopNavComponent } from './shared/topnav/topnav';
 
-
+import { D3Component } from './d3jsmodule/d3js.component';
 
 
 import { LoginComponent } from './login/login.component';
@@ -88,7 +88,7 @@ import { QcChartModule } from './chart/chart.module';
     MenuComponent,
     SidebarComponent,
     PagecomponentComponent,
-
+    D3Component,
     
     
   ],

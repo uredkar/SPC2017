@@ -17,7 +17,10 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [ "../node_modules/chart.js/dist/Chart.bundle.js" ],
+      "scripts": [
+        "../node_modules/chart.js/dist/Chart.bundle.js",
+        "../node_modules/d3/build/d3.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
