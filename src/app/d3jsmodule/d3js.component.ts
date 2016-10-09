@@ -1,7 +1,12 @@
-/// <reference path="../../../typings/d3/d3.d.ts" />
+/// <reference path="../../../typings/d3-v4/src/d3-selection/index.d.ts" />
+
+
 import { Component, Renderer, ViewChild, ViewChildren, AfterViewInit, OnChanges, ElementRef, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 
+import * as d3 from 'd3';
+
+import { Selection, select } from 'd3-selection';
 
 // webpack html imports
 //let template = require('./d3.component.html');
@@ -15,7 +20,7 @@ export class BubblesChart {
     }
 
     render(values: number[]) {
-        d3.select(this.target)
+        select(this.target)
             // Get the old circles
             .selectAll('circle')
             .data(values)

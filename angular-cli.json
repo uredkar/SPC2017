@@ -19,7 +19,10 @@
       ],
       "scripts": [
         "../node_modules/chart.js/dist/Chart.bundle.js",
-        "../node_modules/d3/build/d3.js"
+        "../node_modules/d3/build/d3.js",
+        "../node_modules/d3-selection/build/d3-selection.js"
+
+
       ],
       "environments": {
         "source": "environments/environment.ts",

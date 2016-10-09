@@ -6,7 +6,16 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "2a4b0965b8eb69d165498aa8aaca4cba1e46418f"
+      "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
+    },
+    "bootstrap-slider/bootstrap-slider.d.ts": {
+      "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
+    },
+    "d3-v4/src/d3/index.d.ts": {
+      "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
+    },
+    "requirejs/require.d.ts": {
+      "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
     }
   }
 }
