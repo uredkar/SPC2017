@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
@@ -14,8 +15,11 @@ import { AppComponent } from './app.component';
 import { MenuService } from './menu/menu.service';
 import { TopNavComponent } from './shared/topnav/topnav';
 
-import { D3Component } from './d3jsmodule/d3js.component';
-import { BrushZoom2Component } from './d3jsmodule/d3js.brush.zoom';
+import { BrushZoom2Component } from './d3jsmodule/d3-demos/brush-zoom-2/brush-zoom-2.component';
+import { DragZoom2Component } from './d3jsmodule/d3-demos/drag-zoom-2/drag-zoom-2.component';
+import { VoronoiSpirals3Component } from './d3jsmodule/d3-demos/voronoi-spirals-3/voronoi-spirals-3.component';
+
+
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -88,7 +92,9 @@ import { QcChartModule } from './chart/chart.module';
     MenuComponent,
     SidebarComponent,
     PagecomponentComponent,
-    D3Component,
+
+    VoronoiSpirals3Component,
+    DragZoom2Component,
     BrushZoom2Component,
     
   ],
