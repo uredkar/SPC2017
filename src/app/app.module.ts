@@ -4,7 +4,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
+import { D3Service } from 'd3-ng2-service'; // <-- import statement
 /// application 
 import { Routes, RouterModule } from '@angular/router';
 import { routing } from './app.routes';
@@ -15,7 +15,7 @@ import { MenuService } from './menu/menu.service';
 import { TopNavComponent } from './shared/topnav/topnav';
 
 import { D3Component } from './d3jsmodule/d3js.component';
-
+import { BrushZoom2Component } from './d3jsmodule/d3js.brush.zoom';
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -89,7 +89,7 @@ import { QcChartModule } from './chart/chart.module';
     SidebarComponent,
     PagecomponentComponent,
     D3Component,
-    
+    BrushZoom2Component,
     
   ],
     imports: [
@@ -101,7 +101,7 @@ import { QcChartModule } from './chart/chart.module';
         DropdownModule, AlertModule,
         routing,
   ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService, D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

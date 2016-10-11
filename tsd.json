@@ -11,9 +11,7 @@
     "bootstrap-slider/bootstrap-slider.d.ts": {
       "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
     },
-    "d3-v4/src/d3/index.d.ts": {
-      "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
-    },
+    
     "requirejs/require.d.ts": {
       "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
     }

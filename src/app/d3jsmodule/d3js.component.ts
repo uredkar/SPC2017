@@ -1,26 +1,78 @@
-/// <reference path="../../../typings/d3-v4/src/d3-selection/index.d.ts" />
 
+// use @types and not typings
+ 
 
 import { Component, Renderer, ViewChild, ViewChildren, AfterViewInit, OnChanges, ElementRef, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 
-import * as d3 from 'd3';
+ 
+import {
+    D3Service,
+    D3,
+    Axis,
 
-import { Selection, select } from 'd3-selection';
+    BrushBehavior,
+    BrushSelection,
+    D3BrushEvent,
+    ScaleLinear,
+    ScaleOrdinal,
+    Selection,
+    Transition
+} from 'd3-ng2-service';
+ 
 
-// webpack html imports
-//let template = require('./d3.component.html');
+
+
 
 
 // Exports the visualization module
 export class BubblesChart {
+    private d3: D3; // <-- Define the private member which will hold the d3 reference
     target: HTMLElement;
-    constructor(target: HTMLElement) {
-        this.target = target;
+    //constructor(target: HTMLElement) {
+    //    this.target = target;
+    //}
+
+    constructor(element: ElementRef, d3Service: D3Service) { // <-- pass the D3 Service into the constructor
+        this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
+        this.target = element.nativeElement;
     }
 
+    private drawXAxis()
+    {
+        var range = new Range();
+       
+        
+        
+
+
+        
+        
+        
+        
+    }
+    ngOnInit() {
+        let d3 = this.d3; // <-- for convenience use a block scope variable
+        let d3ParentElement: Selection<any, any, any, any>; // <-- Use the Selection interface (very basic here for illustration only)
+
+        // ...
+
+        if (this.target !== null) {
+
+            d3ParentElement = d3.select(this.target); // <-- use the D3 select method 
+
+            // Do more D3 things 
+
+        }
+    }
     render(values: number[]) {
-        select(this.target)
+        // set the dimensions and margins of the graph
+        var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+     
+        this.d3.select(this.target)
             // Get the old circles
             .selectAll('circle')
             .data(values)
@@ -36,6 +88,19 @@ export class BubblesChart {
                 var offset = i * 20 + 2 * Math.log(d);
                 return `translate(${offset}, ${offset})`;
             });
+
+
+ 
+        
+        //select(this.target)
+        //    .append("g")
+        //    .attr("transform", "translate(0," + height + ")")
+        //    .call(axisBottom(x));
+
+        //select(this.target)
+        //    .append("g")
+        //    .call(axisLeft(y));
+        
     }
 
     destroy() {
@@ -74,9 +139,9 @@ export class D3Component implements OnChanges, AfterViewInit {
         // We have to wait until the view has been initialized before we can get the
         console.log("After view init");
         //DOM element to bind the chart to it
-        this.chart = new BubblesChart(this.target.nativeElement);
+     //   this.chart = new BubblesChart(this.target.nativeElement);
         this.values = [1000, 25000, 3000000, 120000, 25, 10203];
-        this.chart.render(this.values);
+      //  this.chart.render(this.values);
     }
 
 }
