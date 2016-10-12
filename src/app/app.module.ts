@@ -5,6 +5,13 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicFormComponent } from './dynamicformcomponent/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamicformcomponent/dynamic-form-question.component';
+import { DynamicFormHost } from './dynamicformcomponent/dynamicformhost';
+
 import { D3Service } from 'd3-ng2-service'; // <-- import statement
 /// application 
 import { Routes, RouterModule } from '@angular/router';
@@ -19,6 +26,7 @@ import { BrushZoom2Component } from './d3jsmodule/d3-demos/brush-zoom-2/brush-zo
 import { DragZoom2Component } from './d3jsmodule/d3-demos/drag-zoom-2/drag-zoom-2.component';
 import { VoronoiSpirals3Component } from './d3jsmodule/d3-demos/voronoi-spirals-3/voronoi-spirals-3.component';
 
+import { QuestionService } from './dynamicformcomponent/question.service';
 
 
 import { LoginComponent } from './login/login.component';
@@ -93,21 +101,23 @@ import { QcChartModule } from './chart/chart.module';
     SidebarComponent,
     PagecomponentComponent,
 
-    VoronoiSpirals3Component,
-    DragZoom2Component,
-    BrushZoom2Component,
+    VoronoiSpirals3Component, DragZoom2Component, BrushZoom2Component,
     
+    DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost
   ],
     imports: [
         HomeModule,
         BrowserModule,
+        ReactiveFormsModule,
         FormsModule,
         HttpModule,
         QcChartModule,
         DropdownModule, AlertModule,
         routing,
   ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService, D3Service],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService,
+        QuestionService,
+        D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
