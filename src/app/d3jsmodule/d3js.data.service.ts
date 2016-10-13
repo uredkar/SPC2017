@@ -13,7 +13,6 @@ export class D3DataService {
         { date: '25-Apr-12', close: 99.00},
         { date: '24-Apr-12', close: 130.28},
         { date: '23-Apr-12', close: 166.70},
-        { date: '30-Apr-12', close: 53.98 },
         { date: '20-Apr-12', close: 234.98},
         { date: '19-Apr-12', close: 345.44},
         { date: '18-Apr-12', close: 443.34},
@@ -29,10 +28,10 @@ export class D3DataService {
         { date: '3-Apr-12', close: 629.32 },
         { date: '2-Apr-12', close: 618.63 },
         { date: '30-Mar-12' , close: 599.55  },
-        { date: ' 29-Mar-12', close: 609.86  },
-        { date: ' 28-Mar-12', close: 617.62  },
-        { date: ' 27-Mar-12', close: 614.48  },
-        { date: ' 26-Mar-12', close: 606.98 }
+        { date: '29-Mar-12', close: 609.86  },
+        { date: '28-Mar-12', close: 617.62  },
+        { date: '27-Mar-12', close: 614.48  },
+        { date: '26-Mar-12', close: 606.98 }
             
         ];
         return prices;

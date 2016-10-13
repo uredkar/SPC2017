@@ -89,8 +89,8 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             });
 
             // format the data
-            var dtdata = data1.map((d) => {
-                return  parseTime(d.date);
+            var dtdata = data.map((d) => {
+                return  d.date;
             });
 
             var xdomain = d3.extent<Date>(dtdata);
