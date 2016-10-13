@@ -75,14 +75,11 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
                 .y(function (d) { return y(d.close); });
 
 
-            this.d3Svg = d3ParentElement.select<SVGSVGElement>('svg')
-                
-            this.d3Svg.attr('width', this.width + this.margin.left + this.margin.right);
-            this.d3Svg.attr('height', this.height + this.margin.top + this.margin.bottom);
-
-            this.d3Svg.append("g")
-                             .attr("transform",
-                              "translate(" + this.margin.left + "," + this.margin.top + ")");
+            let svg = d3ParentElement.select<SVGSVGElement>('svg')
+                            .attr('width', this.width + this.margin.left + this.margin.right)
+                            .attr('height', this.height + this.margin.top + this.margin.bottom)
+                            .append("g")
+                            .attr("transform","translate(" + this.margin.left + "," + this.margin.top + ")");
 
                         
             // Get the data
@@ -105,18 +102,18 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             y.domain([0, d3.max(data, (d) => { return d.close; })]);
 
             // Add the valueline path.
-            this.d3Svg.append("path")
+            svg.append("path")
                 .data([data])
                 .attr("class", "line")
                 .attr("d", this.valueline);
 
             // Add the X Axis
-            this.d3Svg.append("g")
+            svg.append("g")
                 .attr("transform", "translate(0," + this.height + ")")
                 .call(d3.axisBottom(x));
 
             // Add the Y Axis
-            this.d3Svg.append("g")
+            svg.append("g")
                 .call(d3.axisLeft(y));
 
             
