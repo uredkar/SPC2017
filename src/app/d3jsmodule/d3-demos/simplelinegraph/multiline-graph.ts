@@ -1,7 +1,7 @@
 ﻿
 import { Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChange } from '@angular/core';
 
-import { D3Service, D3,  ScaleTime, D3DragEvent, D3ZoomEvent, Selection, Line } from 'd3-ng2-service';
+import { DSVParsedArray, DSVRowString, D3Service, D3,  ScaleTime, D3DragEvent, D3ZoomEvent, Selection, Line } from 'd3-ng2-service';
 
 import { D3DataService } from '../../d3js.data.service';
 
@@ -12,22 +12,33 @@ export interface LineTempDatum {
     
 }
 
+class CLineTempData implements LineTempDatum
+{
+    date: Date;
+    temperature: number;
+}
+
+export interface CSV {
+    date: Date;
+    temperature: number[];
+
+}
 
 
 @Component({
     selector: 'app-multi-line-graph',
-    template: '<svg></svg>',
+    template: '<svg width="1060" height="800"></svg>',
     providers: [ D3DataService ]
 
 })
-export class MultiLineGraph implements OnInit,  OnDestroy {
+export class MultiLineGraph implements OnInit, OnDestroy {
 
     private width: number = 1060;
     private height: number = 800;
     private d3dataservice: D3DataService;
     private d3: D3;
     private parentNativeElement: any;
-    private d3Svg: Selection<SVGSVGElement, any, null, undefined>;
+    private d3Svg: any;
     private d3G: Selection<SVGGElement, any, null, undefined>;
 
     private valueline: any;
@@ -50,42 +61,140 @@ export class MultiLineGraph implements OnInit,  OnDestroy {
         let d3G: Selection<SVGGElement, any, null, undefined>;
 
 
-        
-        if (this.parentNativeElement !== null) {
 
+
+        if (this.parentNativeElement !== null) {
 
             
             d3ParentElement = d3.select(this.parentNativeElement);
+
+
             // set the dimensions and margins of the graph
             this.margin = { top: 120, right: 120, bottom: 120, left: 120 };
             this.width = 1060 - this.margin.left - this.margin.right;
             this.height = 800 - this.margin.top - this.margin.bottom;
 
             // parse the date / time
+            
             var parseTime = d3.timeParse("%Y%m%d");
-
             var x = d3.scaleTime().range([0, this.width]),
                 y = d3.scaleLinear().range([this.height, 0]),
                 z = d3.scaleOrdinal(d3.schemeCategory10);
 
-            this.valueline = d3.line<LineTempDatum>()
+            
+
+            this.d3Svg = d3ParentElement.select<SVGSVGElement>('svg')
+                .attr('width', this.width + this.margin.left + this.margin.right)
+                .attr('height', this.height + this.margin.top + this.margin.bottom);
+            var g = this.d3Svg.append("g")
+                .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+
+            g.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(0," + this.height + ")")
+                .call(d3.axisBottom(x));
+
+            g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(y))
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", "0.71em")
+                .attr("fill", "#000")
+                .text("Temperature, ºF");
+
+
+
+
+            // Get the data
+            var dataTsv = this.d3dataservice.getTemprature();
+            var data = d3.tsvParse(dataTsv);
+            
+            //var data2 = d3.tsvParseRows(dataTsv, function (d, i) {
+            //    return {
+            //        id: i,
+            //        date: new Date(+d[0], 0, 1), // convert first colum column to Date
+            //        city1: d[1],
+            //        city2: d[2],
+            //        city3: d[3]
+            //    };
+            //});
+
+            
+            var cities = data.columns.slice(1).map(function (id) {
+                
+                return {
+                    
+                    id: id,
+                    values: data.map(function (d) {
+                        var l: LineTempDatum;
+                        l = new CLineTempData();
+                        
+                        l.date = parseTime(d["date"]);
+                        l.temperature = parseFloat(d[id]);
+                        
+                        return l;
+                    })
+                };
+            });
+
+            var dtdate = cities[0].values.map((v) => {
+                return v.date;
+            });
+            var xdomain = d3.extent<Date>(dtdate);
+            x.domain(xdomain);
+
+            // set the ranges
+            var x = d3.scaleTime().range([0, this.width]);
+            var y = d3.scaleLinear().range([this.height, 0]);
+
+            var min = d3.min(cities, (c) => { return d3.min(c.values, (d) => { return d.temperature; }) });
+            var max = d3.max(cities, (c) => { return d3.max(c.values, (d) => { return d.temperature; }) });
+            y.domain([min, max]);
+
+            z.domain(cities.map((c) => {
+                return c.id;
+            }));
+
+
+            var city = g.selectAll(".city")
+                .data(cities)
+                .enter().append("g")
+                .attr("class", "city");
+
+            var valueline = d3.line<LineTempDatum>()
+                .curve(d3.curveBasis)
                 .x(function (d) { return x(d.date); })
                 .y(function (d) { return y(d.temperature); });
 
+            
+            city.append("path")
+                .attr("class", "line")
+                .attr("d", function (d) {
+                    
+                    return valueline(d.values);
+                })
+                .style("stroke", function (d) { return z(d.id); });
 
-            let svg = d3ParentElement.select<SVGSVGElement>('svg')
-                            .attr('width', this.width + this.margin.left + this.margin.right)
-                            .attr('height', this.height + this.margin.top + this.margin.bottom)
-                            .append("g")
-                            .attr("transform","translate(" + this.margin.left + "," + this.margin.top + ")");
+            city.append("text")
+                .datum(function (d) { return { id: d.id, value: d.values[d.values.length - 1] }; })
+                .attr("transform", function (d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
+                .attr("x", 3)
+                .attr("dy", "0.35em")
+                .style("font", "10px sans-serif")
+                .text(function (d) { return d.id; });
 
-                        
-            // Get the data
-            var data1 = this.d3dataservice.getMultiCityWeather();
-           
-           
             
             
+
+
+
+        }
+
+    }
+
+}
 
 /*
 var svg = d3.select("svg"),
@@ -168,8 +277,3 @@ function type(d, _, columns) {
 
             */            
             
-        }
-
-    }
-
-}

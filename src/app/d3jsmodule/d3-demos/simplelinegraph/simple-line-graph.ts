@@ -57,7 +57,7 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
 
         
 
-        debugger;
+        
         if (this.parentNativeElement !== null) {
 
             d3ParentElement = d3.select(this.parentNativeElement);
