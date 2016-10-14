@@ -33,7 +33,7 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
     private d3dataservice: D3DataService;
     private d3: D3;
     private parentNativeElement: any;
-    private d3Svg: Selection<SVGSVGElement, any, null, undefined>;
+    private d3Svg: any;
     private d3G: Selection<SVGGElement, any, null, undefined>;
 
     private valueline: any;
@@ -55,13 +55,14 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
         let d3ParentElement: Selection<HTMLElement, any, null, undefined>;
         let d3G: Selection<SVGGElement, any, null, undefined>;
 
+        
 
-   
+        debugger;
         if (this.parentNativeElement !== null) {
 
-
-            debugger;
             d3ParentElement = d3.select(this.parentNativeElement);
+            
+            
             // set the dimensions and margins of the graph
             this.margin = { top: 120, right: 120, bottom: 120, left: 120 };
             this.width = 1060 - this.margin.left - this.margin.right;
@@ -75,7 +76,7 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
                 .y(function (d) { return y(d.close); });
 
 
-            let svg = d3ParentElement.select<SVGSVGElement>('svg')
+            this.d3Svg = d3ParentElement.select<SVGSVGElement>('svg')
                             .attr('width', this.width + this.margin.left + this.margin.right)
                             .attr('height', this.height + this.margin.top + this.margin.bottom)
                             .append("g")
@@ -102,18 +103,18 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             y.domain([0, d3.max(data, (d) => { return d.close; })]);
 
             // Add the valueline path.
-            svg.append("path")
+            this.d3Svg.append("path")
                 .data([data])
                 .attr("class", "line")
                 .attr("d", this.valueline);
 
             // Add the X Axis
-            svg.append("g")
+            this.d3Svg.append("g")
                 .attr("transform", "translate(0," + this.height + ")")
                 .call(d3.axisBottom(x));
 
             // Add the Y Axis
-            svg.append("g")
+            this.d3Svg.append("g")
                 .call(d3.axisLeft(y));
 
             
