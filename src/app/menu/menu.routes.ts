@@ -11,6 +11,9 @@ import { SimpleLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/simple-l
 import { MultiLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/multiline-graph';
 import { DynamicFormHost  } from '../dynamicformcomponent/dynamicformhost';
 
+
+import { AdvancedDemo } from '../apphandsontable/advanceddemo.component';
+
 export const MenuRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'sidemenu1/home', component: HomeComponent },
@@ -20,7 +23,8 @@ export const MenuRoutes: Routes = [
     { path: 'sidemenu1/d33', component: VoronoiSpirals3Component },
     { path: 'sidemenu1/d34', component: SimpleLineGraph },
     { path: 'sidemenu1/d35', component: MultiLineGraph },
-    { path: 'sidemenu1/dynamicform', component: DynamicFormHost }
+    { path: 'sidemenu1/dynamicform', component: DynamicFormHost },
+    { path: 'sidemenu1/grid', component: AdvancedDemo }
     
 ];
 

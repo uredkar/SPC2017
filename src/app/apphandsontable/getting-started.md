@@ -1,0 +1,1 @@
+﻿Include the Handsontable library files:

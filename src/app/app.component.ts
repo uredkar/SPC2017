@@ -2,7 +2,7 @@ import { Directive, DirectiveDecorator, Component } from '@angular/core';
 
 import { QuestionService } from './dynamicformcomponent/question.service';
 // webpack html imports
-//let template = require('./dropdown-demo.html');
+
 
 
 @Component({

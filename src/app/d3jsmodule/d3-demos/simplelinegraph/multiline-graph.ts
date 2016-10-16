@@ -12,7 +12,7 @@ export interface LineTempDatum {
     
 }
 
-class CLineTempData implements LineTempDatum
+export class CLineTempData implements LineTempDatum
 {
     date: Date;
     temperature: number;
@@ -82,7 +82,7 @@ export class MultiLineGraph implements OnInit, OnDestroy {
                 z = d3.scaleOrdinal(d3.schemeCategory10);
 
             
-
+            
             this.d3Svg = d3ParentElement.select<SVGSVGElement>('svg')
                 .attr('width', this.width + this.margin.left + this.margin.right)
                 .attr('height', this.height + this.margin.top + this.margin.bottom);
@@ -140,19 +140,21 @@ export class MultiLineGraph implements OnInit, OnDestroy {
             });
 
             var dtdate = cities[0].values.map((v) => {
+                
                 return v.date;
             });
-            var xdomain = d3.extent<Date>(dtdate);
-            x.domain(xdomain);
 
-            // set the ranges
-            var x = d3.scaleTime().range([0, this.width]);
-            var y = d3.scaleLinear().range([this.height, 0]);
+            
+            
+            x.domain(d3.extent<Date>(dtdate));
 
-            var min = d3.min(cities, (c) => { return d3.min(c.values, (d) => { return d.temperature; }) });
-            var max = d3.max(cities, (c) => { return d3.max(c.values, (d) => { return d.temperature; }) });
-            y.domain([min, max]);
+            
+            y.domain([
+                d3.min(cities, function (c) { return d3.min(c.values, function (d) { return d.temperature; }); }),
+                d3.max(cities, function (c) { return d3.max(c.values, function (d) { return d.temperature; }); })
+            ]);
 
+            
             z.domain(cities.map((c) => {
                 return c.id;
             }));
@@ -164,15 +166,14 @@ export class MultiLineGraph implements OnInit, OnDestroy {
                 .attr("class", "city");
 
             var valueline = d3.line<LineTempDatum>()
-                .curve(d3.curveBasis)
                 .x(function (d) { return x(d.date); })
-                .y(function (d) { return y(d.temperature); });
+                .y(function (d) { return y(d.temperature); })
+                .curve(d3.curveBasis);
 
             
             city.append("path")
                 .attr("class", "line")
                 .attr("d", function (d) {
-                    
                     return valueline(d.values);
                 })
                 .style("stroke", function (d) { return z(d.id); });

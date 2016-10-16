@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component , Input} from '@angular/core';
 /**
 *	This class represents the lazy loaded HomeComponent.
 */
@@ -29,7 +28,8 @@ export class NotificationComponent { }
 @Component({
 	
 	selector: 'home-cmp',
-	templateUrl: 'home.component.html'
+    templateUrl: 'home.component.html'
+    
 })
 
 export class HomeComponent {
@@ -55,15 +55,15 @@ export class HomeComponent {
 	     msg: 'Well done! You successfully read this important alert message.',
 	     closable: true
 	   }
-	 ];
+	 ]; 
 
 	 public closeAlert(i:number):void {
 	   this.alerts.splice(i, 1);
 	 }
 	/* END*/
-
+     
      constructor() {
-         
+     
 		for (let i = 0; i < 4; i++) {
 			this.addSlide();
 		}

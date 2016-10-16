@@ -1,16 +1,19 @@
 
+ 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormComponent } from './dynamicformcomponent/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamicformcomponent/dynamic-form-question.component';
 import { DynamicFormHost } from './dynamicformcomponent/dynamicformhost';
+
+
 
 import { D3Service } from 'd3-ng2-service'; // <-- import statement
 /// application 
@@ -62,16 +65,25 @@ import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
+import { HotTable } from './apphandsontable/ng2-handsontable/components/handsontable/handsontable';
+
+import { handsontable } from './apphandsontable/ng2-handsontable/components/index';
+
+import { HandsontableComponent } from './apphandsontable/handsontable.component';
+import { AdvancedDemo } from './apphandsontable/advanceddemo.component';
 
 // custom modules
 import { HomeModule } from './home/home.module';
+
+
+
 
 import { QcChartModule } from './chart/chart.module';
 
 
 @NgModule({
     declarations: [
-     
+   
     
     AppComponent,
     LoginComponent,
@@ -103,14 +115,18 @@ import { QcChartModule } from './chart/chart.module';
     PagecomponentComponent,
 
     VoronoiSpirals3Component, DragZoom2Component, BrushZoom2Component, SimpleLineGraph,
-        MultiLineGraph,
+    MultiLineGraph,
 
-    DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost
+    DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost,
+    handsontable, HandsontableComponent, AdvancedDemo
+
+    
   ],
     imports: [
         HomeModule,
         BrowserModule,
         ReactiveFormsModule,
+            
         FormsModule,
         HttpModule,
         QcChartModule,
@@ -123,3 +139,4 @@ import { QcChartModule } from './chart/chart.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
