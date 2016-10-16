@@ -3,6 +3,13 @@
 
 <section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
     <sidebar-menu></sidebar-menu>
-    <router-outlet></router-outlet>
 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>Panel Heading</h1>
+        </div>
+        <div class="panel-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </section>
