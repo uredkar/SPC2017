@@ -65,9 +65,9 @@ import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './menu/sidebar.menu.component';
 import { PagecomponentComponent } from './pagecomponent/pagecomponent.component';
 
-import { HotTable } from './apphandsontable/ng2-handsontable/components/handsontable/handsontable';
+import { HotTable } from 'ng2-handsontable/components/handsontable/handsontable';
 
-import { handsontable } from './apphandsontable/ng2-handsontable/components/index';
+import { handsontable } from 'ng2-handsontable/components/index';
 
 import { HandsontableComponent } from './apphandsontable/handsontable.component';
 import { AdvancedDemo } from './apphandsontable/advanceddemo.component';

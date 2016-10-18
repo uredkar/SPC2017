@@ -16,6 +16,7 @@ import { AdvancedDemo } from '../apphandsontable/advanceddemo.component';
 
 export const MenuRoutes: Routes = [
     { path: '', component: HomeComponent },
+    { path: '#', component: HomeComponent },
     { path: 'sidemenu1/home', component: HomeComponent },
     { path: 'chart', component: ChatComponent },
     { path: 'sidemenu1/d31', component: BrushZoom2Component },
