@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 
 
+
 import { homeRoutes } from './index';
 
 
@@ -11,8 +12,9 @@ import { TimelineComponent, ChatComponent, NotificationComponent } from './home.
 
 @NgModule({
     imports: [homeRoutes,CommonModule],
-    declarations: [HomeComponent, TimelineComponent, ChatComponent, NotificationComponent],
+    declarations: [HomeComponent,  TimelineComponent, ChatComponent, NotificationComponent],
     exports: [HomeComponent, TimelineComponent, ChatComponent, NotificationComponent]
+    
 
         
     

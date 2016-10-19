@@ -1,4 +1,6 @@
-import { Component , Input} from '@angular/core';
+import { Component, Input , Inject } from '@angular/core';
+import { MyHighLowDirectiveDirective } from '../my-high-low-directive.directive';
+
 /**
 *	This class represents the lazy loaded HomeComponent.
 */
@@ -61,9 +63,9 @@ export class HomeComponent {
 	   this.alerts.splice(i, 1);
 	 }
 	/* END*/
-     
-     constructor() {
-     
+     private h: any;
+     constructor( @Inject(MyHighLowDirectiveDirective) h) {
+         this.h = h;
 		for (let i = 0; i < 4; i++) {
 			this.addSlide();
 		}
