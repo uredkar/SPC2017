@@ -37,7 +37,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 
 
-import {  DropdownModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { DropdownModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 // application components
 
 import { PlanningComponent } from './planning/planning.component';
@@ -126,7 +126,6 @@ import { QcChartModule } from './chart/chart.module';
         HomeModule,
         BrowserModule,
         ReactiveFormsModule,
-            
         FormsModule,
         HttpModule,
         QcChartModule,

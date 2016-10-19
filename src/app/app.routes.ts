@@ -17,7 +17,7 @@ import { TopNavComponent } from './shared/topnav/topnav';
 
 export const routes: Routes = [
     
-    { path: '', component: SidebarComponent },
+    
     { path: '', component: MenuComponent },
     ...HomeRoutes,
     ...MenuRoutes

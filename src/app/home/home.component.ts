@@ -15,8 +15,8 @@ export class TimelineComponent { }
 
 @Component({
 	moduleId: module.id,
-	selector: 'chat-cmp',
-	templateUrl: 'chat.html'
+	selector: 'collab-cmp',
+	templateUrl: 'collab.html'
 })
 export class ChatComponent {}
 
@@ -63,10 +63,9 @@ export class HomeComponent {
 	   this.alerts.splice(i, 1);
 	 }
 	/* END*/
-     private h: any;
-     constructor( @Inject(MyHighLowDirectiveDirective) h) {
-         this.h = h;
-		for (let i = 0; i < 4; i++) {
+     
+     constructor() {
+     	for (let i = 0; i < 4; i++) {
 			this.addSlide();
 		}
 	}
