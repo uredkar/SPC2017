@@ -4,15 +4,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF, NgClass } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
 
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormComponent } from './dynamicformcomponent/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamicformcomponent/dynamic-form-question.component';
 import { DynamicFormHost } from './dynamicformcomponent/dynamicformhost';
-
 
 
 import { D3Service } from 'd3-ng2-service'; // <-- import statement
@@ -118,6 +117,9 @@ import { QcChartModule } from './chart/chart.module';
     MultiLineGraph,
 
     DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost,
+    
+
+
     handsontable, HandsontableComponent, AdvancedDemo
 
     

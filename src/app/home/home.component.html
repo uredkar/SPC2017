@@ -116,22 +116,10 @@
             </div>
         </div>
         <!--<alert *ngFor="let alert of alerts; let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
-
+    
         </alert>-->
         <div class="row">
             <div class="col-lg-8">
-                <div class="card card-default">
-                    <div class="card-header">
-                        <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                    </div>
-                    <!-- /.card-header -->
-                    <timeline-cmp></timeline-cmp>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col-lg-8 -->
-            <div class="col-lg-4">
                 <div class="card card-default">
                     <div class="card-header">
                         <i class="fa fa-bell fa-fw"></i> Notifications card
@@ -141,9 +129,39 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                <collab-cmp></collab-cmp>
+                <hero-form></hero-form>
                 <!-- /.card .chat-card -->
             </div>
-            <!-- /.col-lg-4 -->
         </div>
-    </div>
+        <div class="row">
+                <div class="col-lg-8">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                        </div>
+                        <!-- /.card-header -->
+                        <timeline-cmp></timeline-cmp>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <i class="fa fa-bell fa-fw"></i> Notifications card
+                        </div>
+                        <!-- /.card-header -->
+                        <notifications-cmp></notifications-cmp>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                    <collab-cmp></collab-cmp>
+                    <!-- /.card .chat-card -->
+                </div>
+
+
+
+                <!-- /.col-lg-4 -->
+            </div>
+        </div>
