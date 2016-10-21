@@ -9,6 +9,8 @@ import { DragZoom2Component } from '../d3jsmodule/d3-demos/drag-zoom-2/drag-zoom
 import { VoronoiSpirals3Component } from '../d3jsmodule/d3-demos/voronoi-spirals-3/voronoi-spirals-3.component';
 import { SimpleLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/simple-line-graph';
 import { MultiLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/multiline-graph';
+import { ChartThresholdGraph } from '../d3jsmodule/d3-demos/threshold/chart-threshold-graph';
+
 import { DynamicFormHost  } from '../dynamicformcomponent/dynamicformhost';
 
 
@@ -24,6 +26,8 @@ export const MenuRoutes: Routes = [
     { path: 'sidemenu1/d33', component: VoronoiSpirals3Component },
     { path: 'sidemenu1/d34', component: SimpleLineGraph },
     { path: 'sidemenu1/d35', component: MultiLineGraph },
+    { path: 'sidemenu1/threshold', component: ChartThresholdGraph },
+    
     { path: 'sidemenu1/dynamicform', component: DynamicFormHost },
     { path: 'sidemenu1/grid', component: AdvancedDemo }
     

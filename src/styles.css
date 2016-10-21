@@ -19,6 +19,42 @@ body {
 
 }
 
+.linex {  
+    fill: none; 
+    stroke: url(#line-gradient);	
+    stroke-width: 2px;		
+}
+
+
+.thresholdline {  
+    fill: none; 
+    stroke: url(#line-gradient);
+    stroke-width: 2px;  
+
+}
+
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+path.historicRange.between {
+    fill:lightblue;
+}
+path.historicRange.above {
+    fill:darkred;
+}
+path.historicRange.below {
+    fill:seagreen;
+}
+path.dataline {
+    fill:none;
+    stroke-width:3;
+    stroke: steelblue; stroke-width: 2px;
+}
 /*.axis--x path {
   display: none;
 }*/

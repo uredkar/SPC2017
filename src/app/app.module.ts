@@ -29,6 +29,7 @@ import { DragZoom2Component } from './d3jsmodule/d3-demos/drag-zoom-2/drag-zoom-
 import { VoronoiSpirals3Component } from './d3jsmodule/d3-demos/voronoi-spirals-3/voronoi-spirals-3.component';
 import { SimpleLineGraph } from './d3jsmodule/d3-demos/simplelinegraph/simple-line-graph';
 import { MultiLineGraph } from './d3jsmodule/d3-demos/simplelinegraph/multiline-graph';
+import { ChartThresholdGraph } from './d3jsmodule/d3-demos/threshold/chart-threshold-graph';
 import { QuestionService } from './dynamicformcomponent/question.service';
 
 
@@ -114,7 +115,7 @@ import { QcChartModule } from './chart/chart.module';
     PagecomponentComponent,
 
     VoronoiSpirals3Component, DragZoom2Component, BrushZoom2Component, SimpleLineGraph,
-    MultiLineGraph,
+    MultiLineGraph, ChartThresholdGraph,
 
     DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost,
     

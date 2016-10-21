@@ -23,6 +23,15 @@ export interface LineDatum {
 @Component({
     selector: 'app-simple-line-graph',
     template: '<svg width="1060" height="800"></svg>',
+    styles: [
+`
+path.lineg {  
+    fill: none; 
+    stroke: steelblue; stroke-width: 2px;
+
+}
+`
+    ],
     providers: [ D3DataService]
 
 })
@@ -64,9 +73,9 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             
             
             // set the dimensions and margins of the graph
-            this.margin = { top: 120, right: 120, bottom: 120, left: 120 };
-            this.width = 1060 - this.margin.left - this.margin.right;
-            this.height = 800 - this.margin.top - this.margin.bottom;
+            this.margin = { top: 20, right: 10, bottom: 30, left: 50 };
+            this.width = 960 - this.margin.left - this.margin.right;
+            this.height = 500 - this.margin.top - this.margin.bottom;
 
             // parse the date / time
             var parseTime = d3.timeParse("%d-%b-%y");
@@ -102,10 +111,30 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             x.domain(xdomain);
             y.domain([0, d3.max(data, (d) => { return d.close; })]);
 
+            // set the gradient
+            this.d3Svg.append("linearGradient")
+                .attr("id", "line-gradient")
+                .attr("gradientUnits", "userSpaceOnUse")
+                .attr("x1", 0).attr("y1", y(0))
+                .attr("x2", 0).attr("y2", y(1000))
+                .selectAll("stop")
+                .data([
+                    { offset: "0%", color: "red" },
+                    { offset: "40%", color: "red" },
+                    { offset: "40%", color: "black" },
+                    { offset: "62%", color: "black" },
+                    { offset: "62%", color: "lawngreen" },
+                    { offset: "100%", color: "lawngreen" }
+                ])
+                .enter().append("stop")
+                .attr("offset", function (d) { return d.offset; })
+                .attr("stop-color", function (d) { return d.color; });
+
+
             // Add the valueline path.
             this.d3Svg.append("path")
                 .data([data])
-                .attr("class", "line")
+                .attr("class", "linex")
                 .attr("d", this.valueline);
 
             // Add the X Axis
