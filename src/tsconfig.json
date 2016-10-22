@@ -15,9 +15,11 @@
       "node_modules/@types",
       "node_modules",
       "jspm_packages",
+      
       "src/typings/requirejs",
       "src/typings/browser",
       "src/typings/browser.d.ts",
+
       "**/*.spec.ts"
     ],
     "typeRoots": [

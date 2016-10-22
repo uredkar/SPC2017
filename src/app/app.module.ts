@@ -31,7 +31,7 @@ import { SimpleLineGraph } from './d3jsmodule/d3-demos/simplelinegraph/simple-li
 import { MultiLineGraph } from './d3jsmodule/d3-demos/simplelinegraph/multiline-graph';
 import { ChartThresholdGraph } from './d3jsmodule/d3-demos/threshold/chart-threshold-graph';
 import { QuestionService } from './dynamicformcomponent/question.service';
-
+import { CrossFilterComponent } from './d3jsmodule/d3-demos/crossfilter/crossfilter.component';
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -119,6 +119,7 @@ import { QcChartModule } from './chart/chart.module';
     MultiLineGraph, ChartThresholdGraph,
 
     DynamicFormComponent, DynamicFormQuestionComponent, DynamicFormHost,
+    CrossFilterComponent,
     
 
 

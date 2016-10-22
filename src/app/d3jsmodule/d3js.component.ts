@@ -1,7 +1,3 @@
-
-// use @types and not typings
- 
-
 import { Component, Renderer, ViewChild, ViewChildren, AfterViewInit, OnChanges, ElementRef, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 

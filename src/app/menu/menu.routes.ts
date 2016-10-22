@@ -1,4 +1,5 @@
-﻿
+﻿/// <reference path="../d3jsmodule/d3-demos/crossfilter/crossfilter.component.ts" />
+
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
@@ -10,6 +11,9 @@ import { VoronoiSpirals3Component } from '../d3jsmodule/d3-demos/voronoi-spirals
 import { SimpleLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/simple-line-graph';
 import { MultiLineGraph } from '../d3jsmodule/d3-demos/simplelinegraph/multiline-graph';
 import { ChartThresholdGraph } from '../d3jsmodule/d3-demos/threshold/chart-threshold-graph';
+import { CrossFilterComponent } from '../d3jsmodule/d3-demos/crossfilter/crossfilter.component';
+
+
 
 import { DynamicFormHost  } from '../dynamicformcomponent/dynamicformhost';
 
@@ -29,7 +33,9 @@ export const MenuRoutes: Routes = [
     { path: 'sidemenu1/threshold', component: ChartThresholdGraph },
     
     { path: 'sidemenu1/dynamicform', component: DynamicFormHost },
-    { path: 'sidemenu1/grid', component: AdvancedDemo }
+    { path: 'sidemenu1/grid', component: AdvancedDemo },
+    { path: 'sidemenu1/cross', component: CrossFilterComponent }
+    
     
 ];
 
