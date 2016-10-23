@@ -6,7 +6,7 @@ import { MyHighLowDirectiveDirective } from '../my-high-low-directive.directive'
 */
 
 @Component({
-	moduleId: module.id,
+	
 	selector: 'timeline-cmp',
 	templateUrl: 'timeline.html',
 	styleUrls: ['timeline.scss'],
@@ -14,14 +14,14 @@ import { MyHighLowDirectiveDirective } from '../my-high-low-directive.directive'
 export class TimelineComponent { }
 
 @Component({
-	moduleId: module.id,
+	
 	selector: 'collab-cmp',
 	templateUrl: 'collab.html'
 })
 export class ChatComponent {}
 
 @Component({
-	moduleId: module.id,
+	
 	selector: 'notifications-cmp',
 	templateUrl: 'notifications.html'
 })

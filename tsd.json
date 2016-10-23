@@ -14,13 +14,13 @@
     "requirejs/require.d.ts": {
       "commit": "e623c6b3164bb8c6da508f84f7865eaaa97e1a0f"
     },
-    "crossfilter/crossfilter.d.ts": {
+    "d3/d3.d.ts": {
       "commit": "3cc599268d2dabe3c3ee194e92965ee87440e9c3"
     },
     "dcjs/dc.d.ts": {
       "commit": "3cc599268d2dabe3c3ee194e92965ee87440e9c3"
     },
-    "d3/d3.d.ts": {
+    "crossfilter/crossfilter.d.ts": {
       "commit": "3cc599268d2dabe3c3ee194e92965ee87440e9c3"
     }
   }

@@ -4,7 +4,7 @@ import { createCounterRangeValidator } from '../dynamicformcomponent/counter.inp
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'hero-form',
   templateUrl: 'hero-form.component.html'
 })

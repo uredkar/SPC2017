@@ -1,16 +1,20 @@
-﻿
+﻿/// <reference path="../../../../../typings/crossfilter/crossfilter.d.ts" />
+/// <reference path="../../../../../typings/d3/d3.d.ts" />
+/// <reference path="../../../../../typings/dcjs/dc.d.ts" />
+
+
+
+
 import { Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChange } from '@angular/core';
 
 import { D3Service, D3, ScaleTime, D3DragEvent, D3ZoomEvent, Selection, Line } from 'd3-ng2-service';
 
 import { D3DataService } from '../../d3js.data.service';
 
-//var crossfilter = require('@types/crossfilter');
 
-//var dc = require('@types/dc');
 
-import * as crossfilter from 'crossfilter';
-import * as dc from 'dc';
+
+import  * as dc from 'dc';
 
 
 
@@ -71,10 +75,11 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
     private parentNativeElement: any;
     private d3Svg: any;
     private d3G: Selection<SVGGElement, any, null, undefined>;
-
+    private d2: DC.Base;
     private valueline: any;
     private margin: any;
-    private dc: DC.Base;
+    
+    
     // Create the dc.js chart objects & link to div
     
 
@@ -82,7 +87,8 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
         this.d3dataservice = d3dataservice;
         this.d3 = d3Service.getD3();
         this.parentNativeElement = element.nativeElement;
-        this.dc = dc.dc;
+        
+        
     }
 
     ngOnDestroy() {
@@ -92,19 +98,22 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        debugger;
-        let d3 = this.d3;
-        let dc = this.dc;
-        let d3ParentElement: Selection<HTMLElement, any, null, undefined>;
-        let d3G: Selection<SVGGElement, any, null, undefined>;
 
         
-        var dataTable = dc.dataTable("#dc-table-graph");
-        var magnitudeChart = this.dc.barChart("#dc-magnitude-chart");
-        var depthChart = this.dc.barChart("#dc-depth-chart");
-        var dayOfWeekChart = this.dc.rowChart("#dc-dayweek-chart");
-        var islandChart = this.dc.pieChart("#dc-island-chart");
-        var timeChart = this.dc.lineChart("#dc-time-chart");
+        
+        let d3 = this.d3;
+        
+        let d3ParentElement: Selection<HTMLElement, any, null, undefined>;
+        let d3G: Selection<SVGGElement, any, null, undefined>;
+        let dc2 = dc;
+        debugger;
+        
+        var dataTable = dc2.dataTable("#dc-table-graph");
+        var magnitudeChart = dc2.barChart("#dc-magnitude-chart");
+        var depthChart = dc2.barChart("#dc-depth-chart");
+        var dayOfWeekChart = dc2.rowChart("#dc-dayweek-chart");
+        var islandChart = dc2.pieChart("#dc-island-chart");
+        var timeChart = dc2.lineChart("#dc-time-chart");
 
 
 
@@ -217,7 +226,7 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
             // Setup the charts
 
             // count all the facts
-            this.dc.dataCount(".dc-data-count")
+            dc.dataCount(".dc-data-count")
                 .dimension(facts)
                 .group(all);
 
@@ -316,7 +325,7 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
                 .order(d3.ascending);
 
             // Render the Charts
-            this.dc.renderAll();
+            dc.renderAll();
 
 
 

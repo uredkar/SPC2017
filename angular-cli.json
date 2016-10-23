@@ -26,9 +26,8 @@
 
         "../node_modules/handsontable/dist/handsontable.full.js",
         "../node_modules/crossfilter/crossfilter.js",
-        "../node_modules/dc/dc.js"
+        "../node_modules/dc/web/js/dc.js"
         
-
       ],
       "environments": {
         "source": "environments/environment.ts",
