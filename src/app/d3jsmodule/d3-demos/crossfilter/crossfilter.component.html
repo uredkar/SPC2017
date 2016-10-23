@@ -1,0 +1,54 @@
+﻿<div class='container' id='crossfilter-container'>
+    <div class='content'>
+        <div class='container' style='font: 12px sans-serif;'>
+
+            <div class='row'>
+                <div class='span12'>
+                    <h3>New Zealand Earthquakes</h3>
+                    <div class='row'>
+                        <div class='pie-graph span6' id='dc-magnitude-chart'>
+                            <h4>Events by Magnitude</h4>
+                        </div>
+                        <div class='pie-graph span6' id='dc-depth-chart'>
+                            <h4>Events by Depth (km)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='span12' id='dc-time-chart'>
+                    <h4>Events per hour</h4>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='pie-graph span12'>
+                    <table class='table table-hover' id='dc-table-graph'>
+                        <thead>
+                            <tr class='header'>
+                                <th>DTG</th>
+                                <th>Lat</th>
+                                <th>Long</th>
+                                <th>Depth</th>
+                                <th>Magnitude</th>
+                                <th>Google Map</th>
+                                <th>OSM Map</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <H5>
+                Generated with
+                <a href="http://nickqizhu.github.io/dc.js/">dc.js</a>,
+                <a href="http://square.github.io/crossfilter/">crossfilter</a>,
+                <a href="http://d3js.org/">d3.js</a> and
+                <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+            </H5>
+            <p>Earthquake data via <a href="http://geonet.org.nz">Geonet</a>.</p>
+
+        </div>
+    </div>
+</div>

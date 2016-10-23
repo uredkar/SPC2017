@@ -20,14 +20,18 @@
         "styles.css"
       ],
       "scripts": [
+
+        "../node_modules/quicksort/quicksort.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../node_modules/chart.js/dist/Chart.bundle.js",
         "../node_modules/d3/build/d3.js",
         "../node_modules/d3-selection/build/d3-selection.js",
 
         "../node_modules/handsontable/dist/handsontable.full.js",
         "../node_modules/crossfilter/crossfilter.js",
-        "../node_modules/dc/web/js/dc.js"
-        
+        "../node_modules/dc/web/js/dc.js",
+        "../node_modules/dc/src/base-mixin.js" 
+
       ],
       "environments": {
         "source": "environments/environment.ts",

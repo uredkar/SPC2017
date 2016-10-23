@@ -3,7 +3,7 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
 @import '../node_modules/handsontable/dist/handsontable.full.css';
-@import url('../node_modules/dc/dc.css');
+@import  '../node_modules/dc/dc.css';   
 /*
  * Base structure
  */
