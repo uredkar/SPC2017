@@ -158,8 +158,8 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
                 d.lat = +row["latitude"];
                 d.long = +row["longitude"];
 
-                d.mag = +row["magnitude"];
-                d.depth = +row["depth"];
+                d.mag = Math.round(+row["magnitude"]);
+                d.depth = Math.round(+row["depth"]);
 
                 return d;
             });
