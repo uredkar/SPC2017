@@ -30,7 +30,9 @@
         "../node_modules/handsontable/dist/handsontable.full.js",
         "../node_modules/crossfilter/crossfilter.js",
         "../node_modules/dc/web/js/dc.js",
-        "../node_modules/dc/src/base-mixin.js" 
+        "../node_modules/dc/src/base-mixin.js",
+        "./node_modules/bootstrap-material-design/dist/material.js",
+        "./node_modules/bootstrap-material-design/dist/ripple.js"
 
       ],
       "environments": {

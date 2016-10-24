@@ -1,17 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* 
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons")
+    */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
 @import '../node_modules/handsontable/dist/handsontable.full.css';
-@import  '../node_modules/dc/dc.css';   
+
+
+@import '../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.css';
+@import '../node_modules/bootstrap-material-design/dist/css/ripples.css';
+
+
+@import  '../node_modules/dc/dc.css';
+
+
+      
 /*
  * Base structure
  */
-
 /* Move down content because we have a fixed navbar that is 50px tall */
+
 body {
   padding-top: 50px;
 }
+
 
 
 .line {  
