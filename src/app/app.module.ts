@@ -1,6 +1,7 @@
 
 
 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF, NgClass } from '@angular/common';
@@ -79,7 +80,7 @@ import { HomeModule } from './home/home.module';
 import { MaterialModule } from '@angular/material';
 
 import { QcChartModule } from './chart/chart.module';
-
+import { AddressComponent } from './uicomponent/address.component';
 
 @NgModule({
     declarations: [
@@ -113,7 +114,7 @@ import { QcChartModule } from './chart/chart.module';
     MenuComponent,
     SidebarComponent,
     PagecomponentComponent,
-
+    AddressComponent,
     VoronoiSpirals3Component, DragZoom2Component, BrushZoom2Component, SimpleLineGraph,
     MultiLineGraph, ChartThresholdGraph,
 

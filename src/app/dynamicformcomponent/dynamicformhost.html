@@ -1,1 +1,54 @@
 ﻿<dynamic-form [questions]="questions"></dynamic-form>
+<md-card-content>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+        <md-card>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+                <small *ngIf="!myForm.controls.name.valid" class="text-danger">
+                    Name is required (minimum 5 characters).
+                </small>
+            </div>
+        </md-card>
+        <md-card>
+            <!--addresses-->
+            <div formArrayName="addresses">
+                <div *ngFor="let address of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+
+                    <md-card>
+                        <span>Address {{i + 1}}</span>
+                        <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
+                        <md-card-content>
+                            <div [formGroupName]="i">
+                                <address [group]="myForm.controls.addresses.controls[i]"></address>
+                            </div>
+                        </md-card-content>
+                    </md-card>
+                    
+                </div>
+            </div>
+        </md-card>
+        <md-card>
+            <div class="margin-20">
+                <a (click)="addAddress()" style="cursor: default">
+                    Add another address +
+                </a>
+            </div>
+        </md-card>
+        <md-card>
+            <div class="margin-20">
+                <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+            </div>
+        </md-card>
+        <md-card>
+            <div class="clearfix"></div>
+            <div class="margin-20">
+                <div>myForm details:-</div>
+                <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+                <pre>form value: <br>{{myForm.value | json}}</pre>
+            </div>
+        </md-card>
+            </form>
+</md-card-content>
+        
+        
