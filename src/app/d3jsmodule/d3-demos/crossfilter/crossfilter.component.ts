@@ -97,7 +97,7 @@ export class CrossFilterComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
 
-        
+        debugger;
         
         let d3 = this.d3;
         

@@ -1,29 +1,105 @@
 
     <div class="col-sm-9 main">
-        <h2 class="text-muted">Dashboard <small>Home Overview</small></h2>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="app-content">
+            <md-card>
+                <button md-button>FLAT</button>
+                <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+                <button md-raised-button color="primary">PRIMARY RAISED</button>
+                <button md-raised-button color="accent">ACCENT RAISED</button>
+            </md-card>
+            <md-card>
+                <md-checkbox>Unchecked</md-checkbox>
+                <md-checkbox [checked]="true">Checked</md-checkbox>
+                <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+                <md-checkbox [disabled]="true">Disabled</md-checkbox>
+            </md-card>
+            <md-card>
+                <md-radio-button name="symbol">Alpha</md-radio-button>
+                <md-radio-button name="symbol">Beta</md-radio-button>
+                <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+            </md-card>
+            <md-card class="app-input-section">
+                <md-input placeholder="First name"></md-input>
+                <md-input #nickname placeholder="Nickname" maxlength="50">
+                    <md-hint align="end">
+                        {{nickname.characterCount}} / 50
+                    </md-hint>
+                </md-input>
+                <md-input>
+                    <md-placeholder>
+                        <i class="material-icons app-input-icon">android</i> Favorite phone
+                    </md-placeholder>
+                </md-input>
+                <md-input placeholder="Motorcycle model">
+                    <span md-prefix>
+                        <i class="material-icons app-input-icon">motorcycle</i>
+                        &nbsp;
+                    </span>
+                </md-input>
+            </md-card>
+            <md-card>
+                <md-list class="app-list">
+                    <md-list-item *ngFor="let food of foods">
+                        <h3 md-line>{{food.name}}</h3>
+                        <p md-line class="demo-secondary-text">{{food.rating}}</p>
+                    </md-list-item>
+                </md-list>
+            </md-card>
+            <md-card>
+                <md-spinner class="app-spinner"></md-spinner>
+                <md-spinner color="accent" class="app-spinner"></md-spinner>
+            </md-card>
+            <md-card>
+                <label>
+                    Indeterminate progress-bar
+                    <md-progress-bar class="app-progress"
+                                     mode="indeterminate"
+                                     aria-label="Indeterminate progress-bar example"></md-progress-bar>
+                </label>
+                <label>
+                    Determinate progress bar - {{progress}}%
+                    <md-progress-bar class="app-progress"
+                                     color="accent"
+                                     mode="determinate"
+                                     [value]="progress"
+                                     aria-label="Determinate progress-bar example"></md-progress-bar>
+                </label>
+            </md-card>
+            <md-card>
+                <md-tab-group>
+                    <md-tab>
+                        <template md-tab-label>
+                            Earth
+                        </template>
+                        <template md-tab-content>
+                            <p>EARTH</p>
+                        </template>
+                    </md-tab>
+                    <md-tab>
+                        <template md-tab-label>
+                            Fire
+                        </template>
+                        <template md-tab-content>
+                            <p>FIRE</p>
+                        </template>
+                    </md-tab>
+                </md-tab-group>
+            </md-card>
 
-               <div class="form-group label-static">
-                <label for="i2" class="control-label">label-static</label>
-                <input type="email" class="form-control" id="i2" placeholder="placeholder attribute">
-                <p class="help-block">This is a hint as a <code>p.help-block.hint</code></p>
-            </div>
-
-            <div class="form-group label-floating">
-                <label for="i5" class="control-label">label-floating</label>
-                <input type="email" class="form-control" id="i5">
-                <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
-            </div>
-
-            <div class="form-group label-placeholder">
-                <label for="i5p" class="control-label">label-placeholder</label>
-                <input type="email" class="form-control" id="i5p">
-                <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
-            </div>
-            </div>
+            <md-card>
+                <md-icon>build</md-icon>
+            </md-card>
+            <md-card>
+                <button md-button [md-menu-trigger-for]="menu">
+                    MENU
+                </button>
+            </md-card>
+            <md-menu #menu="mdMenu">
+                <button md-menu-item>Lemon</button>
+                <button md-menu-item>Lime</button>
+                <button md-menu-item>Banana</button>
+            </md-menu>
         </div>
-        <hr>
         <div class="row">
             <div class="col-xl-3 col-lg-6">
                 <div class="card card-primary card-inverse">

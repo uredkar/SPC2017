@@ -11,33 +11,38 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css',
+              './app.component.css' ]
 })
 export class MenuComponent implements OnInit, OnDestroy { 
-    menu: MenuItem[];
+    private menu: any;
     private selectedId: number;
     private selectedMenuItem: MenuItem;
     private sub: Subscription;
 
+    
+
     constructor(
         private service: MenuService,
         private route: ActivatedRoute,
-        private router: Router) { }
+        private router: Router) {
+
+       
+    }
 
     ngOnInit() {
+       
         this.sub = this.route
             .params
             .subscribe(params => {
                 this.selectedId = +params['id'];
-                
+
                 this.service.getMenu()
                     .then(menu => this.menu = menu);
             });
-        this.selectedMenuItem = new MenuItem(1,"Select");
+        this.selectedMenuItem = new MenuItem(1, "Select");
 
         this.service.getMenu().then(menu => this.selectedMenuItem = menu[0]);
-
-        //console.debug(this.selectedMenuItem);
         
     }
 
@@ -66,5 +71,9 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
 
 };
+
+
+
+
 
 

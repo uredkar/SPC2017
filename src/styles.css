@@ -3,14 +3,8 @@
 /* 
     @import url("https://fonts.googleapis.com/icon?family=Material+Icons")
     */
-@import '../node_modules/bootstrap/dist/css/bootstrap.css';
-@import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
+
 @import '../node_modules/handsontable/dist/handsontable.full.css';
-
-
-@import '../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.css';
-@import '../node_modules/bootstrap-material-design/dist/css/ripples.css';
-
 
 @import  '../node_modules/dc/dc.css';
 
@@ -152,7 +146,17 @@ path.dataline {
   margin-top: 0;
 }
 
+.demo-sidenav-layout {
+  border: 3px solid black;
 
+  md-sidenav {
+    padding: 10px;
+  }
+}
+
+.demo-sidenav-content {
+  padding: 15px;
+}
 /*
  * Placeholder dashboard ideas
  */

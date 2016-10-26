@@ -1,54 +1,5 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <!--<div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" [routerLink]="['/sidemenu1/home']">SPC SPC 2017</a>
-        </div>-->
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                
-                <li role="menuitem" *ngFor="let menuitem of menu">
-                    <a href="#{{menuitem.id}}">
-                        <span class="badge">{{menuitem.id}}.{{menuitem.name}}</span>
-                    </a>
-                </li>
-                
-
-                <li><a href="#about">About</a></li>
-
-
-                
-                <li class="btn-group" dropdown [(isOpen)]="status.isopen">
-                    <button id="single-button" type="button" class="btn" style="margin: 10px"  
-                       dropdownToggle [disabled]="disabled">
-                       {{selectedMenuItem.name}} <span class="caret"></span>
-                    </button>
-
-                    <ul dropdownMenu role="menu" aria-labelledby="single-button">
-                        <li role="menuitem">
-                            <a class="dropdown-item" href="#"></a>
-                             <div   *ngFor="let menuitem of menu"
-                                [class.selected]="isSelected(menuitem)"
-                                (click)="onSelect(menuitem)">
-                                <span class="badge">{{menuitem.id}}</span> {{menuitem.name}}
-                                 </div>
-                        </li>
-
-                        
-                    </ul>
-                
-                </li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-    
-
-</nav>
-
+<md-toolbar color="primary">
+    SPC Header
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+</md-toolbar>

@@ -76,8 +76,7 @@ import { AdvancedDemo } from './apphandsontable/advanceddemo.component';
 // custom modules
 import { HomeModule } from './home/home.module';
 
-
-
+import { MaterialModule } from '@angular/material';
 
 import { QcChartModule } from './chart/chart.module';
 
@@ -136,8 +135,10 @@ import { QcChartModule } from './chart/chart.module';
         QcChartModule,
         DropdownModule, AlertModule,
         routing,
+        MaterialModule.forRoot()
   ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, MenuService,
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' },
+        MenuService,
         QuestionService,
         D3Service],
   bootstrap: [AppComponent]

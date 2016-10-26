@@ -1,9 +1,18 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+    <app-menu></app-menu>
 
-<app-menu></app-menu>
+    <md-sidenav #sidenav mode="side" class="app-sidenav">
+        <sidebar-menu></sidebar-menu>
 
-<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
-    <sidebar-menu></sidebar-menu>
-
+    </md-sidenav>
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
+        Angular Material2 Example App
+        <span class="app-toolbar-filler"></span>
+        <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+    </md-toolbar>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1>Panel Heading</h1>
@@ -12,4 +21,4 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-</section>
+</md-sidenav-layout>

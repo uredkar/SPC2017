@@ -35,6 +35,17 @@ export class NotificationComponent { }
 })
 
 export class HomeComponent {
+
+    isDarkTheme: boolean = false;
+
+    foods: any[] = [
+        { name: 'Pizza', rating: 'Excellent' },
+        { name: 'Burritos', rating: 'Great' },
+        { name: 'French fries', rating: 'Pretty good' },
+    ];
+
+    progress: number = 0;
+
 	/* Carousel Variable */
 	//myInterval: number = 5000;
 	index: number = 0;
@@ -67,7 +78,11 @@ export class HomeComponent {
      constructor() {
      	for (let i = 0; i < 4; i++) {
 			this.addSlide();
-		}
+         }
+
+          setInterval(() => {
+              this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
+          }, 200);
 	}
 
 	/* Carousel */
