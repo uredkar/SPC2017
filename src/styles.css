@@ -21,6 +21,16 @@
 
 
 
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFCC00;
+}
+html {
+    height: 100%;
+}
+
 .line {  
     fill: none; 
     stroke: steelblue; stroke-width: 2px;

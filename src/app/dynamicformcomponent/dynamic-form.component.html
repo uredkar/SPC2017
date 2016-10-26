@@ -1,4 +1,4 @@
-﻿<div>
+﻿<div style="margin-top:0px;min-height:800px">
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
         <div *ngFor="let question of questions" class="form-row">
             <df-question [question]="question" [form]="form"></df-question>
