@@ -1,24 +1,29 @@
-<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
-    <app-menu></app-menu>
+<div class="card-container" style="margin-top:0px;">
+    <md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+        <app-menu></app-menu>
 
-    <md-sidenav #sidenav mode="side" class="app-sidenav">
-        <sidebar-menu></sidebar-menu>
+        <md-sidenav #sidenav mode="side" class="app-sidenav">
+            <sidebar-menu></sidebar-menu>
 
-    </md-sidenav>
-    <md-toolbar color="primary">
-        <button class="app-icon-button" (click)="sidenav.toggle()">
-            <i class="material-icons app-toolbar-menu">menu</i>
-        </button>
-        Angular Material2 Example App
-        <span class="app-toolbar-filler"></span>
-        <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
-    </md-toolbar>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1>Panel Heading</h1>
-        </div>
-        <div class="panel-body">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-</md-sidenav-layout>
+        </md-sidenav>
+        <md-toolbar color="primary">
+            <button class="app-icon-button" (click)="sidenav.toggle()">
+                <i class="material-icons app-toolbar-menu">menu</i>
+            </button>
+            SPC Header
+            <span class="app-toolbar-filler"></span>
+            <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+        </md-toolbar>
+
+        
+        <md-card>
+            <md-card-subtitle>Subtitle first</md-card-subtitle>
+            <md-card-title>Card with title</md-card-title>
+            <md-card-content>
+                <router-outlet></router-outlet>
+            </md-card-content>
+            
+        </md-card>
+    </md-sidenav-layout>
+</div>
+

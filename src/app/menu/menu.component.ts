@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     private selectedMenuItem: MenuItem;
     private sub: Subscription;
 
-    
+    isDarkTheme: boolean = true;
 
     constructor(
         private service: MenuService,
