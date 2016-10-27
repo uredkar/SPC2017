@@ -22,15 +22,14 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-
         "../node_modules/hammerjs/hammer.js",
         "../node_modules/d3/build/d3.js",
         "../node_modules/d3-selection/build/d3-selection.js",
         "../node_modules/crossfilter/crossfilter.js",
         "../node_modules/dc/web/js/dc.js",
         "../node_modules/dc/src/base-mixin.js",
-        "../node_modules/handsontable/dist/handsontable.full.js"
-
+        "../node_modules/handsontable/dist/handsontable.full.js",
+        "../node_modules/cytoscape/dist/cytoscape.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

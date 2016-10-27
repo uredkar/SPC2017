@@ -1,4 +1,4 @@
-﻿export interface Item {
+﻿export interface PO {
     id: string;
     name: string;
 };

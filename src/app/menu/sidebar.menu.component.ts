@@ -13,6 +13,7 @@ export class SidebarComponent {
 
     foods: any[] = [
         { name: 'Dashboard', route: 'sidemenu1/home' },
+        { name: 'QC Dashboard', route: 'qcmenu' },
         { name: 'D3JS', route: 'sidemenu1/d31' },
         { name: 'D3JS', route: 'sidemenu1/d32' },
         { name: 'D3JS', route: 'sidemenu1/d33' },
@@ -21,6 +22,7 @@ export class SidebarComponent {
         { name: 'threshold', route: 'sidemenu1/threshold' },
         { name: 'dynamicform', route: 'sidemenu1/dynamicform' },
         { name: 'grid', route: 'sidemenu1/grid' },
+        
         { name: 'cross', route: 'sidemenu1/cross' }
         
 

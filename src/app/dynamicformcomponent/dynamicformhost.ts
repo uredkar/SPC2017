@@ -2,7 +2,7 @@
 import { QuestionService } from './question.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { Customer } from '../interface/customer.interface';
+import { Customer } from '../qcmodule/interface/customer.interface';
 
 @Component({
     selector: 'dynamicformhost',
