@@ -1,13 +1,26 @@
 ﻿<div [formGroup]="adressForm">
     <div class="form-group col-xs-6">
         <label>street</label>
-        <input type="text" class="form-control" formControlName="street">
+        <md-input type="text" placeholder="Street" class="form-control" formControlName="street"></md-input>
         <small [hidden]="adressForm.controls.street.valid" class="text-danger">
             Street is required
         </small>
     </div>
     <div class="form-group col-xs-6">
         <label>postcode</label>
-        <input type="text" class="form-control" formControlName="postcode">
+        <md-input type="text" class="form-control" formControlName="postcode"></md-input>
     </div>
+
+
+    <table style="width: 100%" cellspacing="0">
+        <tr>
+            <td><md-input placeholder="First name" style="width: 100%"></md-input></td>
+            <td><md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input></td>
+        </tr>
+        <tr>
+            <td><md-input placeholder="Last name" style="width: 100%"></md-input></td>
+            <td><md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input></td>
+        </tr>
+    </table>
+
 </div>
