@@ -1,4 +1,4 @@
-﻿export interface Item {
+﻿export interface Manufacturer {
     id: string;
     name: string;
 };
