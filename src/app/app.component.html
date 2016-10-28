@@ -1,28 +1,25 @@
 <div class="card-container" style="margin-top:0px;min-height:100%">
     <md-sidenav-layout [class.m2app-dark]="isDarkTheme" style="margin-top:0px;min-height:100%">
-        <app-menu></app-menu>
+        
         <md-toolbar color="primary">
             <button class="app-icon-button" (click)="sidenav.toggle()">
                 <i class="material-icons app-toolbar-menu">menu</i>
             </button>
+            
             SPC Header
             <span class="app-toolbar-filler"></span>
             <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
         </md-toolbar>
-
+        <app-menu></app-menu>
         <md-sidenav #sidenav mode="side" class="app-sidenav" style="margin-top:0px;min-height:100%">
             <sidebar-menu></sidebar-menu>
-
         </md-sidenav>
         
         
         <md-card style="margin-top:0px;min-height:100%">
-            <md-card-subtitle>Subtitle first</md-card-subtitle>
-            <md-card-title>Card with title</md-card-title>
             <md-card-content>
                 <router-outlet></router-outlet>
             </md-card-content>
-            
         </md-card>
     </md-sidenav-layout>
 </div>

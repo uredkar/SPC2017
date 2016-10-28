@@ -22,7 +22,8 @@ export interface LineDatum {
 
 @Component({
     selector: 'app-simple-line-graph',
-    template: '<svg width="1060" height="800"></svg>',
+    
+    template: '<svg></svg>',
     styles: [
 `
 path.lineg {  
@@ -37,8 +38,8 @@ path.lineg {
 })
 export class SimpleLineGraph implements OnInit,  OnDestroy {
 
-    private width: number = 1060;
-    private height: number = 800;
+    private width: number = 800;
+    private height: number = 500;
     private d3dataservice: D3DataService;
     private d3: D3;
     private parentNativeElement: any;

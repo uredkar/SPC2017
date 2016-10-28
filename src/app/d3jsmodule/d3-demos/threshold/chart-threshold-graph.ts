@@ -26,14 +26,14 @@ class LineData implements LineDatum
 
 @Component({
     selector: 'threshold-line-graph',
-    template: '<svg width="1060" height="800"></svg>',
+    template: '<svg></svg>',
     providers: [D3DataService]
     
     
 })
 export class ChartThresholdGraph implements OnInit, OnDestroy {
 
-    private width: number = 1060;
+    private width: number = 500;
     private height: number = 800;
     private d3dataservice: D3DataService;
     private d3: D3;
@@ -73,8 +73,8 @@ export class ChartThresholdGraph implements OnInit, OnDestroy {
 
             // set the dimensions and margins of the graph
             this.margin = { top: 120, right: 120, bottom: 120, left: 120 };
-            this.width = 1060 - this.margin.left - this.margin.right;
-            this.height = 800 - this.margin.top - this.margin.bottom;
+            this.width = 800 - this.margin.left - this.margin.right;
+            this.height = 500 - this.margin.top - this.margin.bottom;
 
             // parse the date / time
             var parseTime = d3.timeParse("%d-%b-%y");
