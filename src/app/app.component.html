@@ -5,12 +5,15 @@
             <button class="app-icon-button" (click)="sidenav.toggle()">
                 <i class="material-icons app-toolbar-menu">menu</i>
             </button>
-            
-            SPC Header
+            <button class="app-icon-button" (click)="sidenav.toggle()">
+                <i class="material-icons app-toolbar-menu">menu</i>
+            </button>
+            SPC 
             <span class="app-toolbar-filler"></span>
             <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
         </md-toolbar>
-        <app-menu></app-menu>
+        <!--<app-menu></app-menu>-->
+
         <md-sidenav #sidenav mode="side" class="app-sidenav" style="margin-top:0px;min-height:100%">
             <sidebar-menu></sidebar-menu>
         </md-sidenav>

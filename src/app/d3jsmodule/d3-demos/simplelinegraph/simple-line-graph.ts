@@ -141,11 +141,19 @@ export class SimpleLineGraph implements OnInit,  OnDestroy {
             // Add the X Axis
             this.d3Svg.append("g")
                 .attr("transform", "translate(0," + this.height + ")")
-                .call(d3.axisBottom(x));
+                .call(d3.axisBottom(x)
+                    .tickSizeInner(-this.height)
+                    .tickSizeOuter(0)
+                    .tickPadding(10)
+                );
 
             // Add the Y Axis
             this.d3Svg.append("g")
-                .call(d3.axisLeft(y));
+                .call(d3.axisLeft(y)
+                    .tickSizeInner(-this.width)
+                    .tickSizeOuter(0)
+                    .tickPadding(10)
+                    );
 
             
             

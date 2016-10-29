@@ -51,6 +51,13 @@ html {
 
 }
 
+.tick text{
+    font-size: 12px;
+  }
+
+.tick line {
+    opacity: 0.2;
+}
 
 .axis path,
 .axis line {
