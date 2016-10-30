@@ -21,6 +21,19 @@
         End Side Drawer
         <br>
         <button md-button (click)="end.close()">Close</button>
+
+        <md-list>
+            <md-list-item><button md-button>QC</button></md-list-item>
+            <md-list-item><button md-raised-button class="md-primary">HELLO</button></md-list-item>
+            <md-list-item><button md-fab class="md-accent">HI</button></md-list-item>
+            <md-list class="app-list">
+                <md-list-item *ngFor="let food of foods">
+
+                    <md-list-item><button md-raised-button class="md-primary" routerLink={{food.route}} [routerLinkActive]="['router-link-active']" md-button>{{food.name}}</button></md-list-item>
+
+                </md-list-item>
+            </md-list>
+        </md-list>
     </md-sidenav>
 
     <div class="demo-sidenav-content">
@@ -36,9 +49,10 @@
             <md-list-item><button md-raised-button class="md-primary">HELLO</button></md-list-item>
             <md-list-item><button md-fab class="md-accent">HI</button></md-list-item>
             <md-list class="app-list">
-                <md-list-item *ngFor="let food of foods">
+                <md-list-item *ngFor="let menu of qcmenu">
                     
-                    <md-list-item><button md-raised-button class="md-primary" routerLink={{food.route}} [routerLinkActive]="['router-link-active']" md-button>{{food.name}}</button></md-list-item>
+                    <md-list-item><button md-raised-button class="md-primary" routerLink={{menu.route}} [routerLinkActive]="['router-link-active']" 
+                                          md-button>{{menu.name}}</button></md-list-item>
 
                 </md-list-item>
             </md-list>

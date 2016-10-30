@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-qc',
+  selector: 'qc-component',
   templateUrl: './qc.component.html',
   styleUrls: ['./qc.component.css']
 })

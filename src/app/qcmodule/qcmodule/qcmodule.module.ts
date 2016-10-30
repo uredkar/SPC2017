@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { QcDashboardComponent } from '../qcdashboard/qcdashboard.component';
 import { RouterModule } from '@angular/router';
 
-
+import { LotComponent } from '../lot/lot.component';
 import { PlanningComponent } from '../planning/planning.component';
 import { ReceivingComponent } from '../receiving/receiving.component';
 import { ShipingComponent } from '../shiping/shiping.component';
@@ -35,6 +35,38 @@ import { MdButtonModule } from '@angular/material/button';
 import { MdIconModule } from '@angular/material/icon';
 
 
+import { AstronautComponent } from './astronaut.component';
+import { CountdownLocalVarParentComponent, CountdownViewChildParentComponent } from './countdown-parent.component';
+import { CountdownTimerComponent } from './countdown-timer.component';
+import { HeroChildComponent } from './hero-child.component';
+import { HeroParentComponent } from './hero-parent.component';
+import { MissionControlComponent } from './missioncontrol.component';
+import { NameChildComponent } from './name-child.component';
+import { NameParentComponent } from './name-parent.component';
+import { VersionChildComponent } from './version-child.component';
+import { VersionParentComponent } from './version-parent.component';
+import { VoterComponent } from './voter.component';
+import { VoteTakerComponent } from './votetaker.component';
+
+let directives: any[] = [
+    
+    AstronautComponent,
+    CountdownLocalVarParentComponent,
+    CountdownViewChildParentComponent,
+    CountdownTimerComponent,
+    HeroChildComponent,
+    HeroParentComponent,
+    MissionControlComponent,
+    NameChildComponent,
+    NameParentComponent,
+    VersionChildComponent,
+    VersionParentComponent,
+    VoterComponent,
+    VoteTakerComponent
+];
+
+let schemas: any[] = [];
+
 @NgModule({
     imports: [  
                 CommonModule,
@@ -46,27 +78,29 @@ import { MdIconModule } from '@angular/material/icon';
                 MaterialModule.forRoot()
             ],
     declarations: [
-                QcDashboardComponent
-                //PlanningComponent,
-                //ReceivingComponent,
-                //ShipingComponent,
-                //InventoryComponent,
-                //RetainComponent,
-                //QcComponent,
-                //SearchComponent,
-                //SamplingComponent,
-                //QccertComponent,
-                //SampleplaningComponent,
-                //QctestplaningComponent,
-                //QctestComponent,
-                //QcreportComponent,
-                //QcadjustmentComponent,
+                QcDashboardComponent,
+                LotComponent,
+                PlanningComponent,
+                ReceivingComponent,
+                ShipingComponent,
+                InventoryComponent,
+                RetainComponent,
+                QcComponent,
+                SearchComponent,
+                SamplingComponent,
+                QccertComponent,
+                SampleplaningComponent,
+                QctestplaningComponent,
+                QctestComponent,
+                QcreportComponent,
+                QcadjustmentComponent,
                 
-                //QcrejectionComponent,
-                //VendorsComponent,
-                //CustomersComponent,
-                //ProductComponent,
-                //QcteamComponent
+                QcrejectionComponent,
+                VendorsComponent,
+                CustomersComponent,
+                ProductComponent,
+                QcteamComponent,
+                ...directives
                   ],
     
     exports: [QcDashboardComponent]

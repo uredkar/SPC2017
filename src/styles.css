@@ -193,6 +193,15 @@ path.dataline {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
+.seconds {
+  background-color: black;
+  color: red;
+  font-size: 3em;
+  margin: 0.3em 0;
+  text-align: center;
+  width: 1.5em;
+}
+
 @media (max-width: 767px) {
 	.grid {
 		width: 100% !important;
