@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { CommonModule } from '@angular/common';
 import { QcDashboardComponent } from '../qcdashboard/qcdashboard.component';
 import { RouterModule } from '@angular/router';
@@ -30,8 +31,10 @@ import { QcteamComponent } from '../qcteam/qcteam.component';
 
 
 import { MaterialModule } from '@angular/material';
-import { MdCardModule } from '@angular/material/card';
-import { MdButtonModule } from '@angular/material/button';
+
+
+
+
 import { MdIconModule } from '@angular/material/icon';
 
 
@@ -72,9 +75,10 @@ let schemas: any[] = [];
                 CommonModule,
                 ReactiveFormsModule,
                 FormsModule,
-                MdCardModule,
-                MdButtonModule,
+                
+                
                 MdIconModule,
+                
                 MaterialModule.forRoot()
             ],
     declarations: [

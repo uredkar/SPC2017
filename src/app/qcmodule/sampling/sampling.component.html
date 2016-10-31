@@ -1,62 +1,72 @@
 
 <div style="margin-top:0px;min-height:100%">
-    <h1>Add user</h1>
+    <h1>Sampling</h1>
     <form #f="ngForm" novalidate>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
-        </div>
-        <div class="form-group">
-            <label>Age</label>
-            <input type="number" class="form-control" name="age" [(ngModel)]="user.age">
-        </div>
-        <div class="form-group">
-            <label>Gender</label>
-            <div class="radio" *ngFor="let gender of genders">
-                <label>
-                    <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="gender.value">
-                    {{gender.display}}
-                </label>
+    
+        <md-card>
+            <div class="form-group">
+                <label>Name</label>
+                <md-input type="text" class="form-control" name="name" [(ngModel)]="user.name">
+                </md-input>
             </div>
-        </div>
-        <div class="form-group">
-            <label>Role</label>
-            <select name="role" class="form-control" [(ngModel)]="user.role">
-                <option *ngFor="let role of roles" [value]="role.value">{{role.display}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Theme</label>
-            <select name="theme" class="form-control" [(ngModel)]="user.theme">
-                <option *ngFor="let theme of themes" [ngValue]="theme">{{theme.display}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="isActive" [(ngModel)]="user.isActive">
-                    Is Active
-                </label>
+            <div class="form-group">
+                <label>Age</label>
+                <md-input type="number" class="form-control" name="age" [(ngModel)]="user.age"></md-input>
             </div>
-        </div>
-        <div class="form-group">
-            <label>Topics</label>
-            <select multiple name="topics" class="form-control" [(ngModel)]="user.topics">
-                <option *ngFor="let topic of topics" [value]="topic.value">{{topic.display}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="hidden" name="toggle" [(ngModel)]="user.toggle">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" [checked]="user.toggle === toggles[0].value"
-                           (change)="$event.target.checked? (user.toggle = toggles[0].value) : (user.toggle = toggles[1].value)">
-                    {{ toggles[0].display }}
-                </label>
+
+
+            <div class="form-group">
+                <label>Gender</label>
+                <md-radio-group name="GenderGroup" [(ngModel)]="user.gender">
+                        <md-radio-button *ngFor="let gender of genders" name="gender" [value]="gender.value">{{gender.display}}</md-radio-button>
+                </md-radio-group>
             </div>
-        </div>
-        <button type="submit" (click)="save(f.value, f.valid)" class="btn btn-default">Submit</button>
-    </form>
+
+
+            <div class="form-group">
+                <label>Role</label>
+                <select name="role" class="form-control" [(ngModel)]="user.role">
+                    <option *ngFor="let role of roles" [value]="role.value">{{role.display}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Theme</label>
+                <select name="theme" class="form-control" [(ngModel)]="user.theme">
+                    <option *ngFor="let theme of themes" [ngValue]="theme">{{theme.display}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        
+                        <md-checkbox  name="theme"  [(ngModel)]="user.isActive"  [checked]="user.isActive">Checked</md-checkbox>
+                        Is Active
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Topics</label>
+                <select multiple name="topics" class="form-control" [(ngModel)]="user.topics">
+                    <option *ngFor="let topic of topics" [value]="topic.value">{{topic.display}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <md-input type="hidden" name="toggle" [(ngModel)]="user.toggle"></md-input>
+                <div class="checkbox">
+                    <label>
+                        <md-checkbox [checked]="user.toggle" 
+                                     (change)="onToggle($event.value);"></md-checkbox>
+
+                        {{ user.toggle }}
+
+
+                    </label>
+                </div>
+            </div>
+            <button md-button  (click)="save(f.value, f.valid)">Submit</button>
+            
+        </md-card>
+</form>
     <div style="margin-top: 20px" *ngIf="f">
         <div>Form details:-</div>
         <pre>Is form valid?: <br>{{f.valid | json}}</pre>

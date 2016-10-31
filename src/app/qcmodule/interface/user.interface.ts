@@ -10,5 +10,5 @@ export interface User {
     theme?: Theme;
     isActive?: boolean;
     topics?: string[];
-    toggle?: string;
+    toggle?: boolean;
 }

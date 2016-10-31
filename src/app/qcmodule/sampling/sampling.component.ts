@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup,  FormArray, FormBuilder, Validators } from '@angular/forms';
 
  
@@ -13,7 +13,9 @@ import { Theme } from '../interface/theme.interface';
   
 })
 export class SamplingComponent implements OnInit {
-  
+
+    @Output() change: EventEmitter<boolean> = new EventEmitter();
+    private _checked: boolean = false;
     public user: User;
 
     public genders = [
@@ -48,18 +50,38 @@ export class SamplingComponent implements OnInit {
         false: { value: 'untoggled', display: 'UnToggled' }
     }
 
+   
+    @Input() get checked() {
+        return this._checked;
+    }
+
+    //@Output() set checked() {
+    //    this._checked = value;
+    //}
+
     ngOnInit() {
         this.user = {
             id: '123',
             name: '',
-            gender: this.genders[0].value,
+            gender: "F",
             role: null,
             theme: this.themes[0],
             isActive: false,
-            toggle: this.toggles[1].value,
+            toggle: true,
             topics: [this.topics[1].value]
         }
     }
+
+    onToggle(event: any)
+    {
+        if (this.user.toggle == true)
+            this.user.toggle = false;
+        else
+            this.user.toggle = true;
+    }
+    //toggle() {
+    //    this.checked = !this.checked;
+    //}
 
     save(isValid: boolean, f: User) {
         if (!isValid) return;
