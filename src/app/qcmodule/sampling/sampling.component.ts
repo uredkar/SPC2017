@@ -3,7 +3,8 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup,  FormArray, FormBuilder, Validators } from '@angular/forms';
 
  
-import { User } from  '../interface/user.interface';
+import { User } from '../interface/user.interface';
+
 import { Theme } from '../interface/theme.interface';
 
 @Component({

@@ -28,7 +28,7 @@ import { VendorsComponent } from '../vendors/vendors.component';
 import { CustomersComponent } from '../customers/customers.component';
 import { ProductComponent } from '../product/product.component';
 import { QcteamComponent } from '../qcteam/qcteam.component';
-
+import { QCSearchComponent } from '../qcsearch/qcsearch.component';
 
 import { MaterialModule } from '@angular/material';
 
@@ -84,6 +84,7 @@ let schemas: any[] = [];
     declarations: [
                 QcDashboardComponent,
                 LotComponent,
+                QCSearchComponent,
                 PlanningComponent,
                 ReceivingComponent,
                 ShipingComponent,
